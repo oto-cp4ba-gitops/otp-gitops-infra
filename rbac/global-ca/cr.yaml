@@ -16,6 +16,8 @@ rules:
       - ''
     resources:
       - secrets
+      - namespaces
+      - project
     verbs:
       - get
       - watch

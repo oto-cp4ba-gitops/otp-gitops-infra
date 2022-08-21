@@ -2,4 +2,4 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: global-ca-sa
-  namespace: global-sa
+  namespace: cp4ba
