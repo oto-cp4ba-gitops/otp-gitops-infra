@@ -5,7 +5,7 @@ metadata:
   namespace: cp4ba
 rules:
 - apiGroups: ["","icp4a.ibm.com"]
-  resources: ["*"]
+  resources: ["icp4aclusters"]
   verbs: ["get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -15,5 +15,5 @@ metadata:
   namespace: output-info
 rules:
 - apiGroups: [""]
-  resources: ["*"]
+  resources: ["configmaps"]
   verbs: ["get","create","delete","patch"]
