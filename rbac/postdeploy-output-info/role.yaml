@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: postdeploy-cp4ba-reader
+  namespace: cp4ba
+rules:
+- apiGroups: ["","icp4a.ibm.com"]
+  resources: ["icp4aclusters"]
+  verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: postdeploy-output-info-role
+  namespace: output-info
+rules:
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["get","create","delete","patch"]

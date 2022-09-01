@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: postdeploy-output-info-rb-cp4ba
+  namespace: cp4ba
+subjects:
+- kind: ServiceAccount
+  name: postdeploy-output-info-sa
+  namespace: output-info
+roleRef:
+  kind: Role
+  name: postdeploy-cp4ba-reader
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: postdeploy-output-info-rb-output-info
+  namespace: output-info
+subjects:
+- kind: ServiceAccount
+  name: postdeploy-output-info-sa
+  namespace: output-info
+roleRef:
+  kind: Role
+  name: postdeploy-output-info-role
+  apiGroup: rbac.authorization.k8s.io
